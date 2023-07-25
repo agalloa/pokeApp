@@ -20,6 +20,7 @@ export const MainLayout: FC<Props> = ({ children, title }) => {
     <Navbar />
     <main style={{
       padding: '0px 20px',
+      background: 'black',
     }}>
        { children }
     </main>
