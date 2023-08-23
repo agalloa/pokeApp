@@ -1,13 +1,11 @@
 import { NextPage } from "next";
 import { Spacer, Text } from "@nextui-org/react";
-
 import { MainLayout } from "@/components/layouts";
 import { SmallPokemon } from "@/interfaces";
-
 import CarouselComponent from "@/components/pokemon/CarouselComponent";
 import { getServerSideProps } from "@/utils/fetchData";
 import PokemonListPage from "@/components/pokemon/PokemonListPage";
-import { Col, Container, Form, FormControl, Row } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 import { useState } from "react";
 
 interface Props {
@@ -20,19 +18,19 @@ const HomePage: NextPage<Props> = ({ carouselPokemons, allPokemons }) => {
   const [filteredPokemons, setFilteredPokemons] =
     useState<SmallPokemon[]>(allPokemons);
 
-  const handleFilterChange = (event: any) => {
-    const type = event.target.value;
-    if (type === "") {
-      setFilteredPokemons(allPokemons);
-    } else {
-      const filteredPokemons = allPokemons.filter((pokemon) =>
-        pokemon.types?.some((pokemonType) => pokemonType.type.name === type)
-      );
-      setFilteredPokemons(filteredPokemons);
-    }
+  //   const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  //   const type = event.target.value;
+  //   if (type === "") {
+  //     setFilteredPokemons(allPokemons);
+  //   } else {
+  //     const filteredPokemons = allPokemons.filter((pokemon) =>
+  //       pokemon.types?.some((pokemonType) => pokemonType.type.name === type)
+  //     );
+  //     setFilteredPokemons(filteredPokemons);
+  //   }
 
-    setSelectedType(type);
-  };
+  //   setSelectedType(type);
+  // };
 
   return (
     <MainLayout title="Listado de pokemons">
@@ -55,17 +53,17 @@ const HomePage: NextPage<Props> = ({ carouselPokemons, allPokemons }) => {
             </Col>
             <Col>
               <Form.Group controlId="pokemonTypeFilter">
-                <Form.Label>Filtrar por tipo:</Form.Label>
-                <Form.Control
+                <Form.Label style={{ color: 'white'}}>Filtrar por tipo:</Form.Label>
+                {/* <Form.Control
                   as="select"
                   value={selectedType || ""}
-                  onChange={handleFilterChange}
+                  onChange={handleFilterChange as (event: React.ChangeEvent<HTMLSelectElement>) => void}
                 >
                   <option value="">Todos</option>
                   <option value="grass">Grass</option>
                   <option value="fire">Fire</option>
                   <option value="water">Water</option>
-                </Form.Control>
+                </Form.Control> */}
               </Form.Group>
             </Col>
           </Row>

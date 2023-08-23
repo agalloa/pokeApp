@@ -11,13 +11,17 @@ export interface SmallPokemon {
     id: number;
     img: string;
     abilities?: Ability[];
-    types?: PokemonType[];
+    types?: string[];
     base_experience?: number;
     height?: number;
     weight?: number;
+    species?: Species;
     sprites?: PokemonSprites;
 }
-
+export interface Species {
+    name: string;
+    url: string;
+}
 export interface Ability {
     ability: {
         name: string;
@@ -34,10 +38,10 @@ export interface PokemonType {
         url: string;
     };
 }
+
 export interface PokemonSprites {
     back_female: string;
     front_female: string;
     front_shiny: string;
     back_shiny: string;
-
 }

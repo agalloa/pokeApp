@@ -23,7 +23,7 @@ const PokemonDetailPage: NextPage<Props> = ({ pokemonData }) => {
     router.back();
   };
 
-  console.log(pokemonData)
+  // console.log(pokemonData)
   return (
     <MainLayout title={`Detalles de ${name}`}>
       <Container>

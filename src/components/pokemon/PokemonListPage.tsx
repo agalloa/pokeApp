@@ -12,7 +12,7 @@ interface Props {
 const PokemonListPage: React.FC<Props> = ({ pokemons }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 20;
-  
+
   const handlePageChange = ({ selected }: { selected: number }) => {
     setCurrentPage(selected);
   };
@@ -27,7 +27,7 @@ const PokemonListPage: React.FC<Props> = ({ pokemons }) => {
       <Grid.Container gap={2} justify="flex-start">
         {paginatedPokemons.map((pokemon) => (
           <Grid xs={6} sm={3} md={2} xl={1} key={pokemon.id}>
-            <Link href={`/pokemon/${pokemon.id}`}>
+            <Link href={`/pokemon/${pokemon.id}`} style={{ textDecoration: 'none'}}>
               <PokemonCard {...pokemon} />
             </Link>
           </Grid>

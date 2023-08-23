@@ -1,0 +1,36 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.page-item {
+    display: inline-block;
+    margin: 5px;
+}
+
+.page-link {
+    color: #fff;
+    background-color: #444;
+    border: 1px solid #555;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.page-link:hover {
+    background-color: #555;
+    color: white;
+}
+
+.active .page-link {
+    background-color: #666;
+    border-color: #777;
+}
+
+.page-item:first-child .page-link,
+.page-item:last-child .page-link{
+    border-radius: 50px;
+}
